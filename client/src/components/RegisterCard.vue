@@ -2,7 +2,7 @@
   <div>
     <v-container>
       <v-row>
-        <v-col cols="12" class="col-lg-3 col-md-4 col-sm-6 ml-auto mr-auto mt-5">
+        <v-col cols="12" class="col-lg-4 col-md-5 col-sm-6 ml-auto mr-auto mt-5">
           <v-card elevation="5" class="mt-5 px-5 py-5">
               <h3 align="center">Create new account</h3>
               <div v-if="error" class="red">
