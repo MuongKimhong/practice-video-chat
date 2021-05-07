@@ -2,6 +2,7 @@ import Vue from 'vue'
 import VueRouter from 'vue-router'
 import Home from '../views/Home.vue'
 import LoginRegister from '../views/LoginRegister.vue'
+import ChatRoom from '../views/ChatRoom.vue'
 
 import store from '../store/index'
 
@@ -13,6 +14,15 @@ const routes = [
     name: 'Home',
     component: Home,
     beforeEnter: function(to, from, next) {
+      if (store.state.userInfo == null) next({ name: 'LoginRegister' })
+      else next()
+    }
+  },
+  {
+    path: '/room/:roomId/:ownerToken',
+    name: 'ChatRoom',
+    component: ChatRoom,
+    beforeEnter: function (to, from, next) {
       if (store.state.userInfo == null) next({ name: 'LoginRegister' })
       else next()
     }

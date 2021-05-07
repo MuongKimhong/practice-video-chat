@@ -20,24 +20,19 @@
 
 <script>
 const axios = require('axios')
-
+import url from '../base.js'
 export default {
   name: "LoginCard",
   data() {
     return {
         username: null,
         password: null,
-
-        url: null,
         error: false
     }
   },
-  created: function() {
-      this.url = String(this.$store.state.baseUrl)
-  },
   methods: {
       login: function() {
-          axios.post(this.url + 'users/login', {
+          axios.post(url + 'users/login', {
               username: this.username,
               password: this.password
           })

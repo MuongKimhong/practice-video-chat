@@ -20,24 +20,19 @@
 
 <script>
 const axios = require('axios')
-
+import url from '../base.js'
 export default {
   name: "RegisterCard",
   data() {
     return {
         username: null,
         password: null,
-
-        url: null,
         error: false
     }
   },
-  created: function() {
-      this.url = String(this.$store.state.baseUrl)
-  },
   methods: {
       register: function() {
-          axios.post(this.url + 'users/create-new-account', {
+          axios.post(url + 'users/create-new-account', {
               username: this.username,
               password: this.password
           })
